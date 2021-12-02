@@ -10,11 +10,12 @@
  */
 size_t binary_tree_leaves(const binary_tree_t *tree)
 {
+	size_t leaves;
+
 	/* Base Case 1: node is NULL */
 	if (tree == NULL)
 		return (0);
 	/* Recursive Case */
-	size_t leaves;
 
 	leaves = (binary_tree_leaves(tree->left) + binary_tree_leaves(tree->right));
 	/* Base Case 2: Is a leaf, both branches are NULL */
