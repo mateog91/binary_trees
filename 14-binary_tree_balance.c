@@ -10,7 +10,8 @@
  */
 size_t b_tree_height2(const binary_tree_t *tree)
 {
-	size_t left = 0, right = 0;
+	size_t left = 0;
+	size_t right = 0;
 
 	/* Base Cases: NULL tree or is a leave */
 	if (tree == NULL)
@@ -38,8 +39,8 @@ size_t b_tree_height2(const binary_tree_t *tree)
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-	size_t h_left = 0, h_right = 0;
-
+	size_t h_left = 0;
+	size_t h_right = 0;
 	if (tree == NULL)
 		return (0);
 
