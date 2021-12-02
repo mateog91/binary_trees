@@ -10,11 +10,11 @@
  */
 size_t b_tree_height2(const binary_tree_t *tree)
 {
+	size_t left = 0, right = 0;
 
 	/* Base Cases: NULL tree or is a leave */
 	if (tree == NULL)
 		return (0);
-	size_t left = 0, right = 0;
 
 	/* Recursive Cases */
 	if (tree->left != NULL)
