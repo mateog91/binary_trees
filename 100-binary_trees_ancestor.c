@@ -33,31 +33,30 @@ binary_tree_t *up_times(binary_tree_t *node, size_t n)
 	return (up_times(node->parent, n - 1));
 }
 /**
- * binary_trees_ancestor - finds the lowest common ancestor of two nodes
+ * binary_trees_an - finds the lowest common ancestor of two nodes
  *
- * @first:  pointer to the first node
- * @second:  pointer to the second node
+ * @f:  pointer to the f node
+ * @s:  pointer to the s node
  *
  * Return:
  * pointer to the lowest common ancestor node of the two given nodes
  * If no common ancestor was found, your function must return NULL
  */
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
-									 const binary_tree_t *second)
+binary_tree_t *binary_trees_an(const binary_tree_t *f, const binary_tree_t *s)
 {
 	size_t depth_first;
 	size_t depth_second;
 	binary_tree_t *a_first;
 	binary_tree_t *a_second;
 
-	a_first = (binary_tree_t *)first;
-	a_second = (binary_tree_t *)second;
+	a_first = (binary_tree_t *)f;
+	a_second = (binary_tree_t *)s;
 
-	if (first == NULL || second == NULL)
+	if (f == NULL || s == NULL)
 		return (NULL);
 
-	depth_first = binary_tree_depth(first);
-	depth_second = binary_tree_depth(second);
+	depth_first = binary_tree_depth(f);
+	depth_second = binary_tree_depth(s);
 
 	if (depth_first > depth_second)
 		a_first = up_times(a_first, depth_first - depth_second);
